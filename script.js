@@ -9,6 +9,9 @@ $(document).ready(function(){
     const prev = $(".prev");
     const itemWidth = track.width() / slidesToShow;
     const movePosition = slidesToScroll * itemWidth;
+    const sumCard = card.length;
+    console.log(sumCard);
+
     card.each(function(index, item){
         $(item).css({
             minWidth: itemWidth,
@@ -25,15 +28,19 @@ $(document).ready(function(){
         setPosition();
         btnCheck();
     });
-
+    
     const setPosition = () =>{
         track.css({
             transform: `translate(${position}px)`
         })
     }
-
+    
     const btnCheck = ()=>{
-        prev.prop('disabled', true);
-    };    
+        prev.prop("disabled", position === 0);
+    };
 
+
+    btnCheck();
+    
+    
 });
