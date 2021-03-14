@@ -21,6 +21,7 @@ $(document).ready(function(){
     next.click(function(){
         position -= movePosition;
         setPosition();
+        btnCheck();
     });
     
     prev.click(function(){
@@ -37,6 +38,7 @@ $(document).ready(function(){
     
     const btnCheck = ()=>{
         prev.prop("disabled", position === 0);
+        next.prop("disabled", position === 7);
     };
 
 
