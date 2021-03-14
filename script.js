@@ -1,7 +1,7 @@
 $(document).ready(function(){
     let position = 0;
     const slidesToShow = 3;
-    const slidesToScroll = 1;
+    const slidesToScroll = 2;
     const container = $(".slider-container");
     const track = $(".slider-track");
     const card = $(".slider-item");
@@ -38,7 +38,9 @@ $(document).ready(function(){
     
     const btnCheck = ()=>{
         prev.prop("disabled", position === 0);
-        next.prop("disabled", position === 7);
+        next.prop("disabled", 
+        position <= -(sumCard -slidesToShow)* itemWidth
+        );
     };
 
 
